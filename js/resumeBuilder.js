@@ -1,12 +1,8 @@
-var formattedName = HTMLheaderName.replace("%data%", "Julia");
-var formattedRole = HTMLheaderRole.replace("%data%", "Web Developer");
+// var formattedName = HTMLheaderName.replace("%data%", "Julia");
+// var formattedRole = HTMLheaderRole.replace("%data%", "Web Developer");
 
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-
-
-
-var skills= ["awesomness", "programming"];
+// $("#header").prepend(formattedRole);
+// $("#header").prepend(formattedName);
 
 var bio = {
     "name" : "Julia",
@@ -15,24 +11,79 @@ var bio = {
         "email" : "julia.kudinovich@gmail.com",
         "mobile" : "123-456-7890",
         "github" : "julia-kudinovich",
+        "twitter" : "JuliaK071188",
         "location" : "Las Vegas"
     },
-    "picture URL" : "i,ages/197x148.jpg",
-    "welcome message" : "Nice to meet you!",
-    "skills" : skills
+    "biopic" : "images/my_pic.jpg",
+    "welcomeMessage" : "Nice to meet you!",
+    "skills" : ["html", "css", "bootstrap", "php", "sql"]
 };
 
 
-var  work = {};
-work.position = "BI developer";
-work.employer = "AH4R";
-work.years = "2.5";
-work.city = "Las Vegas, NV";
+var work = {
+    "jobs" : [
+        {
+            "employer" : "American Homes 4 Rent" ,
+            "title" : "BI Developer",
+            "location" : "Las Vegas, NV",
+            "dates" : "October 2015 - Current",
+            "description" : ""
+        },
+        {
+            "employer" : "American Homes 4 Rent",
+            "title" : "Pricing and Analytics Staff",
+            "location" : "Las Vegas, NV",
+            "dates" : "July 2014 - October 2015",
+            "description" : ""
+        }
+    ]
+};
 
-var eduction = {};
-education["name"] = "UCLA";
-education["years"] = "2012-2014";
-education["city"] = "Los Angeles, CA";
+var projects = {
+    "projects" : [
+        {
+            "title" : "",
+            "dates" : "",
+            "description" : "",
+            "images" : ["", ""]
+        },
+        {
+             "title" : "",
+            "dates" : "",
+            "description" : "",
+            "images" : ["", ""]
+        }
+    ]
+};
 
-$("#main").append(work["position"]);
-$("#main").append(education.name);
+var eduction = {
+    "schools" : [
+        {
+            "name" : "UCLA",
+            "location" : "Los Angeles",
+            "degree" : "Bachelor of Science",
+            "majors" : ["Math/Applied Science"],
+            "dates" : "2014",
+            "url" : ""
+        },
+        {
+            "name" : "LAVC",
+            "location" : "Los Angeles",
+            "degree" : "Transfer",
+            "majors" : ["Mathematics"],
+            "dates" : "2012",
+            "url" : ""
+        }
+    ],
+    "onlineDegrees" : [
+          {
+            "school" : "UDACITY",
+            "title" : "Front-End Web Developer Nanodegree",
+            "dates" : "2017",
+            "url" : "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001?v=fe1"
+        }
+    ]
+};
+
+
+
