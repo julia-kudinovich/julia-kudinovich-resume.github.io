@@ -4,8 +4,9 @@ var bio = {
     "contacts" : {
         "email" : "julia.kudinovich@gmail.com",
         "mobile" : "123-456-7890",
-        "github" : "julia-kudinovich",
+        "github" : "https://github.com/julia-kudinovich",
         "twitter" : "JuliaK071188",
+        "linkedIn" : "https://www.linkedin.com/in/juliakudinovich",
         "location" : "Las Vegas"
     },
     "biopic" : "images/my_pic.jpg",
@@ -19,13 +20,15 @@ var work = {
         "title" : "BI Developer",
         "location" : "Las Vegas, NV",
         "dates" : "October 2015 - Current",
-        "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "url" : "https://www.americanhomes4rent.com/"
     },{
         "employer" : "American Homes 4 Rent",
         "title" : "Pricing and Analytics Staff",
         "location" : "Las Vegas, NV",
         "dates" : "July 2014 - October 2015",
-        "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "url" : "https://www.americanhomes4rent.com/"
     }]
 };
 
@@ -69,9 +72,30 @@ var education = {
 
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+var foramttedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
+var foramttedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+var foramttedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+var foramttedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+var foramttedGithub = HTMLgithub.replace("#", bio.contacts.github);
+var foramttedLinkedIn = HTMLLinkedIn.replace("#", bio.contacts.linkedIn);
+var foramttedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
+$("#header").append(foramttedBioPic);
+// $("#header").append(foramttedWelcomeMsg);
+$("#topContacts").append(foramttedMobile);
+$("#topContacts").append(foramttedEmail);
+$("#topContacts").append(foramttedLocation);
+$("#topContacts").append(foramttedLinkedIn);
+$("#topContacts").append(foramttedGithub);
+
+$("#footerContacts").append(foramttedMobile);
+$("#footerContacts").append(foramttedEmail);
+$("#footerContacts").append(foramttedLinkedIn);
+$("#footerContacts").append(foramttedGithub);
+
+
 
 if (bio.skills.length > 0 ) {
     $("#header").append(HTMLskillsStart);
@@ -125,7 +149,7 @@ education.display = function() {
 work.display = function() {
     for (i=0; i < work.jobs.length; i++) {
         $("#workExperience").append(HTMLworkStart);
-        var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].employer);
+        var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].employer).replace("#", work.jobs[i].url);
         var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[i].title);
         var formattedEmployerTitle = formattedEmployer + formattedTitle;
         var formattedDates = HTMLworkDates.replace("%data%", work.jobs[i].dates);
@@ -161,6 +185,7 @@ projects.display = function() {
 
     }
 };
+
 
 
 work.display();

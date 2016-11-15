@@ -129,7 +129,7 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #ffe4e1;
 }
 
 .flex-box {
@@ -148,12 +148,16 @@ a {
   padding: 10px;
 }
 
+
 .center-content {
   padding: 2.5% 5%;
 }
 
 ul {
   list-style-type: none;
+}
+li{
+  display: inline;
 }
 
 .biopic {
@@ -218,4 +222,9 @@ span {
   .biopic {
     display: block;
   }
+}
+
+
+.zocial {
+  margin-top: 0;
 }
