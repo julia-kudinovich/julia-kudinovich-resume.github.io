@@ -11,7 +11,7 @@ var bio = {
     },
     "biopic" : "images/my_pic.jpg",
     "welcomeMessage" : "Nice to meet you!",
-    "skills" : ["html", "css", "bootstrap", "php", "sql"]
+    "skills" : ["html", "css", "bootstrap", "php", "sql", "javascript"]
 };
 
 var work = {
@@ -84,22 +84,17 @@ $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
 $("#header").append(foramttedBioPic);
 // $("#header").append(foramttedWelcomeMsg);
-$("#topContacts").append(foramttedMobile);
-$("#topContacts").append(foramttedEmail);
-$("#topContacts").append(foramttedLocation);
-$("#topContacts").append(foramttedLinkedIn);
-$("#topContacts").append(foramttedGithub);
+$("#header").append(foramttedMobile);
+$("#header").append(foramttedEmail);
+$("#header").append(foramttedLocation);
 
-$("#footerContacts").append(foramttedMobile);
-$("#footerContacts").append(foramttedEmail);
+
 $("#footerContacts").append(foramttedLinkedIn);
 $("#footerContacts").append(foramttedGithub);
 
 
-
 if (bio.skills.length > 0 ) {
     $("#header").append(HTMLskillsStart);
-
     for (i=0; i < bio.skills.length; i++) {
         var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
         $("#skills"). append(formattedSkill);
