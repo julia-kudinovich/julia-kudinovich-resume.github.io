@@ -5,7 +5,8 @@ var HTMLcontactGeneric = '<li class="flex-item"><span class="navy-text">%contact
 var HTMLmobile = '<li class="flex-item"><span class="navy-text">mobile</span><span class="white-text">%data%</span></li>';
 var HTMLemail = '<li class="flex-item"><span class="navy-text">email</span><span class="white-text">%data%</span></li>';
 var HTMLtwitter = '<li class="flex-item"><span class="navy-text">twitter</span><span class="white-text">%data%</span></li>';
-var HTMLgithub = '<li class="flex-item"><a class="zocial github" href="#" target="_blank">GitHub</a></li>';
+var HTMLgithub = '<li class="flex-item"><span class="navy-text">github</span><span class="white-text">%data%</span></li>';
+var HTMLgithubUrl = '<li class="flex-item"><a class="zocial github" href="#" target="_blank">GitHub</a></li>';
 var HTMLLinkedIn = '<li class="flex-item"><a class="zocial linkedin" href="#" target="_blank">LinkedIn</a></li>';
 var HTMLlocation = '<li class="flex-item"><span class="navy-text">location</span><span class="white-text">%data%</span></li>';
 
@@ -221,10 +222,6 @@ function initializeMap() {
     pinPoster(locations);
 
 }
-
-/*
-Uncomment the code below when you're ready to implement a Google Map!
-*/
 
 // Calls the initializeMap() function when the page loads
 window.addEventListener('load', initializeMap);

@@ -4,13 +4,13 @@ var bio = {
     "contacts" : {
         "email" : "julia.kudinovich@gmail.com",
         "mobile" : "123-456-7890",
-        "github" : "https://github.com/julia-kudinovich",
+        "github" : "julia-kudinovich",
         "twitter" : "JuliaK071188",
         "linkedIn" : "https://www.linkedin.com/in/juliakudinovich",
         "location" : "Las Vegas"
     },
     "biopic" : "images/my_pic.jpg",
-    "welcomeMessage" : "Nice to meet you!",
+    "welcomeMessage" : "Welcome to my online resume!",
     "skills" : ["html", "css", "bootstrap", "php", "sql", "javascript"]
 };
 
@@ -76,21 +76,26 @@ var foramttedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
 var foramttedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 var foramttedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 var foramttedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-var foramttedGithub = HTMLgithub.replace("#", bio.contacts.github);
-var foramttedLinkedIn = HTMLLinkedIn.replace("#", bio.contacts.linkedIn);
+var foramttedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+var foramttedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+var foramttedGithubUrl = HTMLgithubUrl.replace("#", "https://github.com/"+bio.contacts.github);
+var foramttedLinkedInUrl = HTMLLinkedIn.replace("#", bio.contacts.linkedIn);
 var foramttedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
 $("#header").append(foramttedBioPic);
-// $("#header").append(foramttedWelcomeMsg);
-$("#header").append(foramttedMobile);
-$("#header").append(foramttedEmail);
-$("#header").append(foramttedLocation);
+$("#header").append(foramttedWelcomeMsg);
+$("#topContacts").append(foramttedMobile);
+$("#topContacts").append(foramttedEmail);
+$("#topContacts").append(foramttedTwitter);
+$("#topContacts").append(foramttedGithub);
+$("#topContacts").append(foramttedLocation);
 
-
-$("#footerContacts").append(foramttedLinkedIn);
-$("#footerContacts").append(foramttedGithub);
+$("#footerContacts").append(foramttedMobile);
+$("#footerContacts").append(foramttedEmail);
+$("#footerContacts").append(foramttedLinkedInUrl);
+$("#footerContacts").append(foramttedGithubUrl);
 
 
 if (bio.skills.length > 0 ) {
@@ -179,7 +184,7 @@ projects.display = function() {
         }
 
     }
-};
+}
 
 
 
