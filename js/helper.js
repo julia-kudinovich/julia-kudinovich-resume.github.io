@@ -5,7 +5,8 @@ var HTMLcontactGeneric = '<li class="flex-item"><span class="navy-text">%contact
 var HTMLmobile = '<li class="flex-item"><span class="navy-text">mobile</span><span class="white-text">%data%</span></li>';
 var HTMLemail = '<li class="flex-item"><span class="navy-text">email</span><span class="white-text">%data%</span></li>';
 var HTMLtwitter = '<li class="flex-item"><span class="navy-text">twitter</span><span class="white-text">%data%</span></li>';
-var HTMLgithub = '<li class="flex-item"><a class="zocial github" href="#" target="_blank">GitHub</a></li>';
+var HTMLgithub = '<li class="flex-item"><span class="navy-text">github</span><span class="white-text">%data%</span></li>';
+var HTMLgithubUrl = '<li class="flex-item"><a class="zocial github" href="#" target="_blank">GitHub</a></li>';
 var HTMLLinkedIn = '<li class="flex-item"><a class="zocial linkedin" href="#" target="_blank">LinkedIn</a></li>';
 var HTMLlocation = '<li class="flex-item"><span class="navy-text">location</span><span class="white-text">%data%</span></li>';
 
@@ -115,13 +116,13 @@ function initializeMap() {
         var locations = [];
 
         // adds the single location property from bio to the locations array
-        locations.push(bio.contacts.location);
+        locations.push(model.bio.contacts.location);
 
         // iterates through school locations and appends each location to
         // the locations array. Note that forEach is used for array iteration
         // as described in the Udacity FEND Style Guide:
         // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
-        education.schools.forEach(function(school){
+        model.education.schools.forEach(function(school){
             locations.push(school.location);
         });
 
@@ -129,7 +130,7 @@ function initializeMap() {
         // the locations array. Note that forEach is used for array iteration
         // as described in the Udacity FEND Style Guide:
         // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
-        work.jobs.forEach(function(job){
+        model.work.jobs.forEach(function(job){
             locations.push(job.location);
         });
 
@@ -221,10 +222,6 @@ function initializeMap() {
     pinPoster(locations);
 
 }
-
-/*
-Uncomment the code below when you're ready to implement a Google Map!
-*/
 
 // Calls the initializeMap() function when the page loads
 window.addEventListener('load', initializeMap);
